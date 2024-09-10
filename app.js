@@ -89,3 +89,10 @@ function returnValue(color) {
 }
 
 alert(returnValue{"green"});
+
+function calcCircleArea(radius) {
+    return 2 * Math.PI * radius;
+}
+
+document.getElementById("useOne").innerHTML += calcCircleArea(2);
+document.getElementById("useTwo").innerHTML += calcCircleArea(4);
