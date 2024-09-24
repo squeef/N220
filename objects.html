@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course Enrollment</title>
     <script>
-        // Create the course object
-        let course = {
-            courseNumber: "N220",
-            courseTitle: "Introduction to Media Application Development",
-            totalSeats: 20,
-            enrolled: 18,
-            
-            // Method to check availability
-            availability: function() {
-                return this.enrolled < this.totalSeats;
-            },
-            
-            // Method to display availability
-            displayAvailability: function() {
-                console.log(`${this.courseNumber} Open: ${this.availability()}`);
-                document.getElementById("availability").innerText = `${this.courseNumber} Open: ${this.availability()}`;
-            },
-            
-            // Method to enroll additional students
-            enrollStudents: function(number) {
-                this.enrolled += number;
-            }
-        };
+      // Create the course object
+      let course = {
+        courseNumber: "N220",
+        courseTitle: "Introduction to Media Application Development",
+        totalSeats: 20,
+        enrolled: 18,
 
-        // Print initial availability
-        window.onload = function() {
-            course.displayAvailability(); // Output: N220 Open: true
+        // Method to check availability
+        availability: function () {
+          return this.enrolled < this.totalSeats;
+        },
 
-            // Enroll two more students
-            course.enrollStudents(2);
+        // Method to print availability
+        printAvailability: function () {
+          console.log(`${this.courseNumber} Open: ${this.availability()}`);
+        },
 
-            // Print updated enrolled number
-            console.log(`Enrolled Students: ${course.enrolled}`); // Output: Enrolled Students: 20
-            document.getElementById("enrolled").innerText = `Enrolled Students: ${course.enrolled}`;
+        // Method to enroll additional students
+        enrollStudents: function (number) {
+          this.enrolled += number;
+        },
+      };
 
-            // Print availability again
-            course.displayAvailability(); // Output: N220 Open: false
-        };
+      // Execute when the window loads
+      window.onload = function () {
+        // Initial availability check
+        course.printAvailability(); // Output: N220 Open: true
+
+        // Enroll two more students
+        course.enrollStudents(2);
+
+        // Print updated enrolled number
+        console.log(`Enrolled Students: ${course.enrolled}`); // Output: Enrolled Students: 20
+
+        // Print availability again
+        course.printAvailability(); // Output: N220 Open: false
+      };
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Course Enrollment Status</h1>
-    <p id="availability"></p>
-    <p id="enrolled"></p>
-</body>
+    <p>Check the console for enrollment details.</p>
+  </body>
 </html>
