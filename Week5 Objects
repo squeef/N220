@@ -1,0 +1,34 @@
+// Create the course object
+let course = {
+  courseNumber: "N220",
+  courseTitle: "Introduction to Media Application Development",
+  totalSeats: 20,
+  enrolled: 18,
+
+  // Method to check availability
+  availability: function () {
+    return this.enrolled < this.totalSeats;
+  },
+
+  // Method to display availability
+  displayAvailability: function () {
+    console.log(`${this.courseNumber} Open: ${this.availability()}`);
+  },
+
+  // Method to enroll additional students
+  enrollStudents: function (number) {
+    this.enrolled += number;
+  },
+};
+
+// Print initial availability
+course.displayAvailability(); // Output: N220 Open: true
+
+// Enroll two more students
+course.enrollStudents(2);
+
+// Print updated enrolled number
+console.log(`Enrolled Students: ${course.enrolled}`); // Output: Enrolled Students: 20
+
+// Print availability again
+course.displayAvailability(); // Output: N220 Open: false
