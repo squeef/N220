@@ -53,3 +53,4 @@ function summarizeList() {
   // Update the summary <p> element with the summary text
   summaryElement.innerHTML = summaryText;
 }
+//Completed Code
